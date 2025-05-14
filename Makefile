@@ -3,7 +3,7 @@ CC = arm-kindle-linux-gnueabi-gcc
 STRIP = arm-kindle-linux-gnueabi-strip
 
 # Paths
-FBINK_DIR = $(HOME)/KindlePrograms/fblib/FBInk-v1.25.0
+FBINK_DIR = libs/FBInk-v1.25.0/
 INCLUDES = -I$(FBINK_DIR)
 LIBS = $(FBINK_DIR)/Release/libfbink.a -lm
 
