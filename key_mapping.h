@@ -63,6 +63,14 @@ typedef enum {
     MXCKPD_KEY_R_FORWARD = 191    // Alias for F21
 } mxckpd_keys;
 
+typedef enum {
+    FIVEWAY_UP = 103,
+    FIVEWAY_LEFT = 105,
+    FIVEWAY_RIGHT = 106,
+    FIVEWAY_DOWN = 108,
+    FIVEWAY_CENTER = 194,
+} fiveway_keys;
+
 // Function to map key codes to characters
 char map_key_to_char(int key_code, char *buffer, size_t *buffer_index);
 

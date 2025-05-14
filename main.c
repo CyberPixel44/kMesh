@@ -22,6 +22,7 @@ int main() {
         .is_cleared = true,
         .fg_color = FG_WHITE,
         .bg_color = BG_BLACK,
+        .is_flashing = true
     };
 
     int init_result = fbink_init(FBFD_AUTO, &config);
@@ -51,6 +52,10 @@ int main() {
 
     while (read(fd, &ev, sizeof(ev)) > 0) {
         if (ev.type == EV_KEY && ev.value == 1) { // 1 = key press
+            if (ev.code == MXCKPD_KEY_HOME) {
+                printf("Home key pressed, exiting...\n");
+                break; // Exit on ESC key
+            }
             printf("Key code %d pressed\n", ev.code);
 
             char c = map_key_to_char(ev.code, buffer, &buffer_index);
